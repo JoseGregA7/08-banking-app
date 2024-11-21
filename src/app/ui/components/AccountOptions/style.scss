@@ -1,0 +1,40 @@
+
+.Option__wrapper {
+    border-top: solid 1px gray;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Option__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    margin-top: 8px;
+}
+
+.Option__container {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.Option__button {
+    padding: 8px 2px;
+    font-size: 0.8rem;
+    background: linear-gradient(135deg, rgba(16, 65, 226, 0.589), rgb(14, 179, 201));
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 70px;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}

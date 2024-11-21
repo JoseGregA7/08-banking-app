@@ -1,0 +1,35 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Match snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="current-player"
+    >
+      Es el turno del Jugador:
+      <span
+        class="current-player__player1"
+      >
+        1
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Match snapshot 2`] = `
+<body>
+  <div>
+    <div
+      class="current-player"
+    >
+      Es el turno del Jugador:
+      <span
+        class="current-player__player2"
+      >
+        2
+      </span>
+    </div>
+  </div>
+</body>
+`;

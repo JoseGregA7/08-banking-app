@@ -1,0 +1,21 @@
+$primary-gradient: linear-gradient(135deg, rgba(16, 65, 226, 0.589), rgb(201, 42, 14));
+$background-color: #f4f4f4;
+$primary-color: #007bff;
+$text-color: #333;
+$sub-text-color: #666;
+$border-radius: 5px;
+
+.button {
+    padding: 8px 4px;
+    font-size: 0.8rem;
+    background: $primary-gradient;
+    color: #fff;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 150px;
+    &:hover {
+      opacity: 0.8;
+    }
+  }

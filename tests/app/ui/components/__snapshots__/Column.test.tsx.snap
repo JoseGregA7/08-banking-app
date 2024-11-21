@@ -1,0 +1,105 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Pruebas en el componente Column > Match snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="column"
+      data-testid="column-1"
+    >
+      <div
+        class="cell cell--player1 "
+        data-testid="cell-1-0"
+      />
+      <div
+        class="cell cell--player2 "
+        data-testid="cell-1-1"
+      />
+      <div
+        class="cell  "
+        data-testid="cell-1-2"
+      />
+      <div
+        class="cell  "
+        data-testid="cell-1-3"
+      />
+      <div
+        class="cell  "
+        data-testid="cell-1-4"
+      />
+      <div
+        class="cell  "
+        data-testid="cell-1-5"
+      />
+      <div
+        class="cell  "
+        data-testid="cell-1-6"
+      />
+      <div
+        class="cell  "
+        data-testid="cell-1-7"
+      />
+      <div
+        class="cell  "
+        data-testid="cell-1-8"
+      />
+      <div
+        class="cell  "
+        data-testid="cell-1-9"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Pruebas en el componente Column > Match snapshot 2`] = `
+<body>
+  <div>
+    <div
+      class="column"
+      data-testid="column-2"
+    >
+      <div
+        class="cell cell--player1 "
+        data-testid="cell-2-0"
+      />
+      <div
+        class="cell cell--player2 "
+        data-testid="cell-2-1"
+      />
+      <div
+        class="cell  "
+        data-testid="cell-2-2"
+      />
+      <div
+        class="cell  "
+        data-testid="cell-2-3"
+      />
+      <div
+        class="cell  "
+        data-testid="cell-2-4"
+      />
+      <div
+        class="cell  "
+        data-testid="cell-2-5"
+      />
+      <div
+        class="cell  "
+        data-testid="cell-2-6"
+      />
+      <div
+        class="cell  "
+        data-testid="cell-2-7"
+      />
+      <div
+        class="cell  "
+        data-testid="cell-2-8"
+      />
+      <div
+        class="cell  "
+        data-testid="cell-2-9"
+      />
+    </div>
+  </div>
+</body>
+`;

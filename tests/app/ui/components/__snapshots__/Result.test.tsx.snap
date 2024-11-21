@@ -1,0 +1,82 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Pruebas en el componente Results > Match snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="new-game"
+    >
+      <button
+        class="new-game_button"
+      >
+        Jugar de nuevo
+      </button>
+      <div
+        class="result"
+      >
+        ¡El Ganador es el Jugador 
+        1
+        ! 
+        <span
+          class="result__player2"
+        />
+         🎉
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Pruebas en el componente Results > Match snapshot 2`] = `
+<body>
+  <div>
+    <div
+      class="new-game"
+    >
+      <button
+        class="new-game_button"
+      >
+        Jugar de nuevo
+      </button>
+      <div
+        class="result"
+      >
+        ¡El Ganador es el Jugador 
+        2
+        ! 
+        <span
+          class="result__player1"
+        />
+         🎉
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Pruebas en el componente Results > Match snapshot 3`] = `
+<body>
+  <div>
+    <div
+      class="new-game"
+    >
+      <button
+        class="new-game_button"
+      >
+        Jugar de nuevo
+      </button>
+      <div
+        class="result"
+      >
+        ¡El Ganador es el Jugador 
+        3
+        ! 
+        <span
+          class="result__player1"
+        />
+         🎉
+      </div>
+    </div>
+  </div>
+</body>
+`;
