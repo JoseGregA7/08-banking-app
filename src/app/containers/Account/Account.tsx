@@ -17,6 +17,7 @@ const Account = () => {
         const fetchAccount = async () => {
             const token = localStorage.getItem('token');
             const clientId = localStorage.getItem('clientId');
+            console.log('clientId en account', clientId, token);
             console.log('clientId', clientId);
 
             if (!token || !clientId) {

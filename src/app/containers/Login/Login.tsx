@@ -84,7 +84,7 @@ const Login = () => {
             }
         };
 
-        const checkIfClientExists = async (clientId: string | null) => {
+        const checkIfClientExists = async () => {
             if (!clientId) {
                 setError('No estás autenticado o no se encontró el ID del cliente.');
                 navigate('/login');
@@ -92,20 +92,21 @@ const Login = () => {
             }
             try {
                 const token = localStorage.getItem('token');
+                const clientId = localStorage.getItem('clientId');
                 const response = await axios.post(
                     '/api/customer/get',
                     {
                         dinHeader: {
                             device: 'device_value',
                             language: 'en',
-                            uuid: 'random_uuid_value',  // UUID dinámico
+                            uuid: 'random_uuid_value',
                             ip: '192.168.1.1',
                             transactionTime: new Date().toISOString(),
                             symmetricalKey: 'key_value',
                             initializationVector: 'vector_value',
                         },
                         dinBody: {
-                            id: clientId // Usamos el ID del cliente para verificar existencia
+                            id: clientId
                         }
                     },
                     {
@@ -120,11 +121,9 @@ const Login = () => {
                 }
             } catch (error) {
                 console.error('Error al verificar el cliente:', error);
-                return false;  // Si hay un error, asumimos que el cliente no existe
+                return false;
             }
         }
-
-        
 
         const requestDataLogin = {
             dinHeader: {
@@ -144,56 +143,16 @@ const Login = () => {
 
         try {
             const response = await axios.post('/api/auth/authenticate', requestDataLogin);
-            console.log('response.data', response.data);
             if (response.data) {
-                console.log('Autenticación exitosa:', response.data);
                 const token = response.data.dinBody.token;
                 const clientId = response.data.dinBody.id;
                 localStorage.setItem('token', token);
                 localStorage.setItem('clientId', clientId);
-                const clientExists = await checkIfClientExists(clientId);
-                console.log('clientExists', clientExists);
+                const clientExists = await checkIfClientExists();
                 if(clientExists) {
-                    console.log('clientExists', clientExists);
                     fetchAccount({clientId, token});
                     
                 }
-                // const createCustomerData = {
-                //     dinHeader: {
-                //         device: 'device_value',
-                //         language: 'en',
-                //         uuid: 'random_uuid_value',
-                //         ip: '192.168.1.1',
-                //         transactionTime: new Date().toISOString(),
-                //         symmetricalKey: 'key_value',
-                //         initializationVector: 'vector_value',
-                //     },
-                //     dinBody: {
-                //         name: formData.email
-                //     },
-                // };
-                // try {
-                //     const createResponse = await axios.post(
-                //         '/api/customer/create',
-                //         createCustomerData,
-                //         {
-                //             headers: {
-                //                 Authorization: `Bearer ${token}`,
-                //             },
-                //         }
-                //     );
-
-                //     if (createResponse.data) {
-                //         console.log('Cliente creado con éxito:', createResponse.data);
-                //         navigate('/account');
-                //     } else {
-                //         setError('Error al crear el cliente.');
-                //         navigate('/account');
-                //     }
-                // } catch (error) {
-                //     console.error('Error al crear el cliente:', error);
-                //     setError('Hubo un error al crear el cliente. Intenta nuevamente.');
-                // }
             }
 
         } catch (error) {

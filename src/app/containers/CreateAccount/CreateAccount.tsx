@@ -28,6 +28,8 @@ const CreateAccount = () => {
         e.preventDefault();
         const token = localStorage.getItem('token');
         const clientId = localStorage.getItem('clientId');
+        console.log('clientId en create', clientId, token);
+        
 
         if (!token || !clientId) {
             setError('No estás autenticado. Por favor, inicia sesión.');

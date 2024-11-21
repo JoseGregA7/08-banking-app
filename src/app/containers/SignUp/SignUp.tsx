@@ -59,7 +59,7 @@ const SignUp = () => {
             const response = await axios.post('/api/auth/register', requestData);
             if (response.data) {
                 console.log('Registro exitoso:', response.data);
-                navigate('/login');
+                navigate('/first-login');
 
             }
             console.log('Registro exitoso:', response.data);

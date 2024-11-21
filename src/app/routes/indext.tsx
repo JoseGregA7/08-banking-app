@@ -5,6 +5,7 @@ import Login from '../containers/Login/Login';
 import SignUp from '../containers/SignUp/SignUp';
 import Account from '../containers/Account/Account';
 import CreateAccount from '../containers/CreateAccount/CreateAccount';
+import FirstLogin from '../containers/FirstLogin/FirstLogin';
 
 
 export const router = createBrowserRouter([
@@ -21,6 +22,14 @@ export const router = createBrowserRouter([
     element: (
       <AppProvider>
         <Login />
+      </AppProvider>
+    ),
+  },
+  {
+    path: '/first-login',
+    element: (
+      <AppProvider>
+        <FirstLogin />
       </AppProvider>
     ),
   },
