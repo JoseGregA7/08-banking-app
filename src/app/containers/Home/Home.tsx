@@ -7,8 +7,6 @@ const Home = () => {
     const navigate = useNavigate();
     const handleLoginClick = () => navigate('/login');
     const handleSignUpClick = () => navigate('/signup');
-    const clientId = localStorage.getItem('clientId');
-    console.log('test', clientId);
     return (
         <LayoutMain>
             <BasicWrapper>

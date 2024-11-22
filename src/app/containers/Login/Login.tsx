@@ -4,24 +4,16 @@ import { LayoutMain } from '@ui/layouts/LayoutMain';
 import BasicWrapper from '@ui/components/BasicWrapper';
 import LoginForm from '@ui/forms/LoginForm';
 import { useLogin } from '../../core/hooks/useLogin';
-
-interface LoginData {
-    email: string;
-    password: string;
-}
+import { ILoginData } from '../../core/interfaces/request';
 
 const Login = () => {
-    const [formData, setFormData] = useState<LoginData>({
-        email: '',
-        password: '',
-    });
-
+    const [formData, setFormData] = useState<ILoginData>({ email: '', password: '' });
     const navigate = useNavigate();
-    const { loginUser, loading, error } = useLogin();  // Usamos el hook
+    const { loginUser, loading, error } = useLogin();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setFormData((prevData) => ({ ...prevData, [name]: value }));
+        setFormData(prevData => ({ ...prevData, [name]: value }));
     };
 
     const handleSubmit = async (e: React.FormEvent) => {

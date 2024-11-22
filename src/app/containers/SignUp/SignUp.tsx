@@ -1,24 +1,19 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Usar el custom hook
+import { useNavigate } from 'react-router-dom';
 import { LayoutMain } from '@ui/layouts/LayoutMain';
 import BasicWrapper from '@ui/components/BasicWrapper';
 import RegisterForm from '@ui/forms/RegisterForm';
 import { useSignUp } from '../../core/hooks/useSignUp';
-
-interface SignUpData {
-    firstname: string;
-    lastname: string;
-    email: string;
-    password: string;
-}
+import { ISignUpData } from '../../core/interfaces/request';
 
 const SignUp = () => {
-    const [formData, setFormData] = useState<SignUpData>({
+    const [formData, setFormData] = useState<ISignUpData>({
         firstname: '',
         lastname: '',
         email: '',
         password: '',
     });
+
     const navigate = useNavigate();
     const { signUp, loading, error } = useSignUp();
 
@@ -30,6 +25,7 @@ const SignUp = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const response = await signUp(formData);
+
         if (response) {
             console.log('Registro exitoso:', response);
             navigate('/first-login');

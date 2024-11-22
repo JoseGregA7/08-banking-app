@@ -8,7 +8,10 @@ const AccountContent = ({ navigate, account }: { navigate: NavigateFunction, acc
             <div>
                 <h4>Detalles de la Cuenta:</h4>
                 <p>Saldo: {account.amount}</p>
-                <button className='button' onClick={() => navigate('/transactions')}>Ver transacciones</button>
+                <p>ID: {account.id}</p>
+                <button className='button' onClick={() => navigate('/transactions')}>Transacciones</button>
+                <span className='AccountContent__divider'>|</span>
+                <button className='button' onClick={() => navigate('/transactions')}>Operaciones</button>
             </div>
         </div>
     )

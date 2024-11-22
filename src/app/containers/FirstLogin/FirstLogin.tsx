@@ -5,13 +5,13 @@ import BasicWrapper from '@ui/components/BasicWrapper';
 import LoginForm from '@ui/forms/LoginForm';
 import { useFirstLogin } from '../../core/hooks/useFirstLogin';
 
-interface FirstLoginData {
+interface IFirstLoginData {
     email: string;
     password: string;
 }
 
 const FirstLogin = () => {
-    const [formData, setFormData] = useState<FirstLoginData>({
+    const [formData, setFormData] = useState<IFirstLoginData>({
         email: '',
         password: '',
     });
