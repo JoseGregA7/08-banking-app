@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { LayoutMain } from '@ui/layouts/LayoutMain';
 import BasicWrapper from '@ui/components/BasicWrapper';
 import './style.scss';
+import useCreateAccount from '../../core/hooks/useCreateAccount';
 
 const CreateAccount = () => {
     const [formData, setFormData] = useState({
         number: '',
         amount: '',
     });
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState<string | null>(null);
     const navigate = useNavigate();
-
-    // Manejo de cambios en los campos del formulario
+    const { createAccount, loading, error } = useCreateAccount(); // Llamamos al hook de creación de cuenta
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
@@ -22,62 +19,31 @@ const CreateAccount = () => {
             [name]: value,
         }));
     };
-
-    // Manejo del envío del formulario
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const token = localStorage.getItem('token');
         const clientId = localStorage.getItem('clientId');
-        console.log('clientId en create', clientId, token);
-        
 
         if (!token || !clientId) {
-            setError('No estás autenticado. Por favor, inicia sesión.');
+            console.log(
+                'No se pudo obtener el token o el clientId. Por favor, inicia sesión y vuelve a intentarlo.',
+            );
+            navigate('/login');
             return;
         }
 
-        const requestData = {
-            dinHeader: {
-                device: 'device_value',
-                language: 'en',
-                uuid: 'random_uuid_value',
-                ip: '192.168.1.1',
-                transactionTime: new Date().toISOString(),
-                symmetricalKey: 'key_value',
-                initializationVector: 'vector_value',
-            },
-            dinBody: {
-                number: formData.number,
-                amount: parseFloat(formData.amount), 
-                customerId: clientId, 
-                createdAt: new Date().toISOString(),
-            }
-        };
+        if (!formData.number || !formData.amount) {
+            console.log('El número o el saldo no pueden ser vacíos');
+            return;
+        }
 
-        setLoading(true);
-        setError(null);
+        const { success, data } = await createAccount(formData.number, formData.amount, clientId, token);
 
-        try {
-            const response = await axios.post('/api/account/create', requestData, {
-                headers: {
-                    Authorization: `Bearer ${token}`, 
-                }
-            });
-
-            if (response.data) {
-                console.log('Cuenta creada exitosamente:', response.data);
-                navigate('/account');
-            } else {
-                setError('Hubo un error al crear la cuenta. Intenta nuevamente.');
-            }
-        } catch (error) {
-            console.error('Error al crear la cuenta:', error);
-            setError('Hubo un error al crear la cuenta. Intenta nuevamente.');
-        } finally {
-            setLoading(false);
+        if (success) {
+            console.log('Cuenta creada exitosamente:', data);
+            navigate('/account');
         }
     };
-
     return (
         <LayoutMain>
             <BasicWrapper>

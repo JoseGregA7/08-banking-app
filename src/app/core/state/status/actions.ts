@@ -1,27 +1,19 @@
-export const DROP_PIECE = 'DROP_PIECE';
-export const CHANGE_PLAYER = 'CHANGE_PLAYER';
-export const SET_WINNER = 'SET_WINNER';
-export const RESET_GAME = 'RESET_GAME';
-export const SET_DRAW = 'SET_DRAW';
+// actions.ts
+export const SET_ACCOUNT_INFO = 'SET_ACCOUNT_INFO';
+export const SET_ERROR = 'SET_ERROR';
+export const SET_LOADING = 'SET_LOADING';
 
-export const setDraw = () => ({
-    type: SET_DRAW,
+export const setAccountInfo = (accountData: any) => ({
+    type: SET_ACCOUNT_INFO,
+    payload: accountData,
 });
 
-export const dropPiece = (column: number) => ({
-    type: DROP_PIECE,
-    payload: column,
+export const setError = (error: string) => ({
+    type: SET_ERROR,
+    payload: error,
 });
 
-export const changePlayer = () => ({
-    type: CHANGE_PLAYER,
-});
-
-export const setWinner = (player: number) => ({
-    type: SET_WINNER,
-    payload: player,
-});
-
-export const resetGame = () => ({
-    type: RESET_GAME,
+export const setLoading = (loading: boolean) => ({
+    type: SET_LOADING,
+    payload: loading,
 });

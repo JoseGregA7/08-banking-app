@@ -1,19 +1,32 @@
-import { CHANGE_PLAYER, DROP_PIECE, RESET_GAME, SET_WINNER } from "../state/status/actions";
-
-export interface IGameState {
-  board: number[][];
-  currentPlayer: number;
-  winner: number | null;
-  draw: boolean;
+// interfaces/state.ts
+export interface IAccountInfo {
+  id: number;
+  name: string;
+  amount: number;  
 }
 
-export type GameAction =
-  | { type: typeof DROP_PIECE; payload: number }
-  | { type: typeof CHANGE_PLAYER; payload: number }
-  | { type: typeof SET_WINNER; payload: number }
-  | { type: typeof RESET_GAME; payload: number }
+
+export interface IAppState {
+  accountInfo: IAccountInfo | null;
+  error: string | null;
+  loading: boolean;
+}
+
+export interface AppAction {
+  type: string;
+  payload?: any;
+}
 
 export interface IAppContextProps {
-  state: IGameState;
-  dispatch: React.Dispatch<any>;
+  state: IAppState;
+  dispatch: React.Dispatch<any>; // El dispatch es la función que dispara las acciones
+}
+
+// types.ts
+export type AccountActionTypes = 'SET_ACCOUNT_INFO' | 'SET_ERROR' | 'SET_LOADING';
+
+// Define las acciones
+export interface AccountAction {
+    type: AccountActionTypes;
+    payload?: any; // Puedes ser más específico dependiendo de la acción
 }

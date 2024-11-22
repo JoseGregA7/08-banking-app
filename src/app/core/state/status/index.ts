@@ -1,37 +1,24 @@
-import { IGameState } from "../../interfaces/state";
-import { handleDropPiece } from "../../utils/gameUtils";
-import { gameInitialState } from "../reducers";
-import { CHANGE_PLAYER, DROP_PIECE, RESET_GAME, SET_DRAW, SET_WINNER } from "./actions";
 
-export const gameCases = {
-    [DROP_PIECE]: (state: IGameState, payload: number) => {
+import { IAppState } from "../../interfaces/state";
+import { SET_ACCOUNT_INFO, SET_ERROR, SET_LOADING } from "./actions";
+
+export const accountCases = {
+    [SET_ACCOUNT_INFO]: (state: IAppState, payload: any) => {
         return {
             ...state,
-            board: handleDropPiece(state.board, payload, state.currentPlayer),
+            accountInfo: payload,
         };
     },
-    [CHANGE_PLAYER]: (state: IGameState) => {
+    [SET_ERROR]: (state: IAppState, payload: string) => {
         return {
             ...state,
-            currentPlayer: state.currentPlayer === 1 ? 2 : 1, 
+            error: payload,
         };
     },
-    [SET_WINNER]: (state: IGameState, payload: number) => {
+    [SET_LOADING]: (state: IAppState, payload: boolean) => {
         return {
             ...state,
-            winner: payload, 
-        };
-    },
-    [SET_DRAW]: (state: IGameState) => {
-      return {
-          ...state,
-          draw: true, 
-      };
-  },
-    [RESET_GAME]: () => {
-        return {
-            ...gameInitialState, 
+            loading: payload,
         };
     },
 };
-

@@ -1,23 +1,21 @@
+// AppContext.tsx
 import React, { createContext, useReducer, useContext, ReactNode } from 'react';
-import { gameReducer } from './reducers';
-import { IAppContextProps, IGameState } from '../interfaces/state';
+import { appReducer } from './reducers';
+import { IAppContextProps, IAppState } from '../interfaces/state';
 
-const AppContext = createContext<IAppContextProps | undefined>(undefined);
+const AppContext = createContext< IAppContextProps | undefined>(undefined);
 
-export const AppProvider: React.FC<{ children: ReactNode; value?: IAppContextProps }> = ({ children, value }) => {
-    const initialState: IGameState = {
-        board: Array.from({ length: 6 }, () => Array(7).fill(0)),
-        currentPlayer: 1,
-        winner: null,
-        draw: false,
+export const AppProvider: React.FC<{ children: ReactNode; value?: IAppContextProps }> = ({ children }) => {
+    const initialState: IAppState = {
+        accountInfo: null,
+        error: null,
+        loading: false,
     };
 
-    const [state, dispatch] = useReducer(gameReducer, initialState);
-    const contextValue = value || { state, dispatch };
-
+    const [state, dispatch] = useReducer(appReducer, initialState);
 
     return (
-        <AppContext.Provider value={contextValue}>
+        <AppContext.Provider value={{ state, dispatch }}>
             {children}
         </AppContext.Provider>
     );

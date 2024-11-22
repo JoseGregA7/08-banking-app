@@ -1,14 +1,14 @@
-import { GameAction, IGameState } from "../interfaces/state";
-import { gameCases } from "./status";
+// reducers.ts
+import { AccountAction, IAppState } from "../interfaces/state";
+import { accountCases } from "./status";
 
-export const gameInitialState: IGameState = {
-    board: Array.from({ length: 6 }, () => Array(7).fill(0)),
-    currentPlayer: 1,
-    winner: null,
-    draw: false,
+export const initialAppState: IAppState = {
+    accountInfo: null,
+    error: null,
+    loading: false,
 };
 
-export const gameReducer = (state: IGameState = gameInitialState, action: GameAction): IGameState => {
-    const caseFunction = gameCases[action.type];
+export const appReducer = (state: IAppState = initialAppState, action: AccountAction): IAppState => {
+    const caseFunction = accountCases[action.type];
     return caseFunction ? caseFunction(state, action.payload) : state;
 };
