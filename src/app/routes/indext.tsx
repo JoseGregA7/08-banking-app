@@ -6,6 +6,7 @@ import SignUp from '../containers/SignUp/SignUp';
 import Account from '../containers/Account/Account';
 import CreateAccount from '../containers/CreateAccount/CreateAccount';
 import FirstLogin from '../containers/FirstLogin/FirstLogin';
+import Operations from '../containers/Operations/Operations';
 
 
 export const router = createBrowserRouter([
@@ -54,6 +55,14 @@ export const router = createBrowserRouter([
     element: (
       <AppProvider>
         <CreateAccount />
+      </AppProvider>
+    ),
+  },
+  {
+    path: '/operations',
+    element: (
+      <AppProvider>
+        <Operations />
       </AppProvider>
     ),
   },

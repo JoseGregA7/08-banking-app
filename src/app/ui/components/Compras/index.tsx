@@ -1,5 +1,4 @@
 import axios from "axios";
-import { time } from "console";
 import { useState } from "react";
 
 const Compras = () => {
@@ -25,9 +24,9 @@ const Compras = () => {
             id: "",
             amountCost: "",
             timestamp: "",
-            amount:50,
+            amount:"5",
             type:"ATM",
-            accountId:"673fe2ed2a1b0209c3c4e412",
+            accountId:"67409a7db175195bc6753de9",
         };
 
         const requestData = {
@@ -36,7 +35,7 @@ const Compras = () => {
         };
         const response = await axios.post('/api/transaction/create', requestData, {
             headers: {
-                Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfVVNFUiIsInN1YiI6ImNpbmNvQGdtYWlsLmNvbSIsImlhdCI6MTczMjI1MDk5OCwiZXhwIjoxNzMyMjUyNDM4fQ.d4GRcYaAhmned60TrC9eToIctbPzalZCPiruGwU7Elg`,
+                Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfVVNFUiIsInN1YiI6InRyZWNlQGdtYWlsLmNvbSIsImlhdCI6MTczMjI4NzEwNywiZXhwIjoxNzMyMjg4NTQ3fQ.KyNZca4CQOLF1HMyir5becoN5lzq5YcGfZBsG6jjpAA`,
             }
         });
         if (response.data) {

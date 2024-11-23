@@ -9,9 +9,9 @@ const AccountContent = ({ navigate, account }: { navigate: NavigateFunction, acc
                 <h4>Detalles de la Cuenta:</h4>
                 <p>Saldo: {account.amount}</p>
                 <p>ID: {account.id}</p>
-                <button className='button' onClick={() => navigate('/transactions')}>Transacciones</button>
+                <button className='button' onClick={() => navigate('/')}>Transacciones</button>
                 <span className='AccountContent__divider'>|</span>
-                <button className='button' onClick={() => navigate('/transactions')}>Operaciones</button>
+                <button className='button' onClick={() => navigate('/operations')}>Operaciones</button>
             </div>
         </div>
     )

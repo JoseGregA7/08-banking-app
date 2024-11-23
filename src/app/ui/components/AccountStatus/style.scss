@@ -1,0 +1,54 @@
+.AccountStatus__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   width: 100%;
+}
+
+.AccountStatus__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px;
+    box-shadow: 1px 1px rgba(241, 242, 245, 0.3), 2px 2px 15px rgba(223, 225, 236, 0.6);
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.AccountStatus__title {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+.AccountStatus__content {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+.AccountStatus__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.AccountStatus__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    padding: 2px;
+    margin: 0;
+    list-style: none;
+
+    strong {
+        color: #666;
+        font-weight: bold;
+        margin-right: 5px;
+    }
+}

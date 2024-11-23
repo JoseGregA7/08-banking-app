@@ -1,6 +1,5 @@
 import AccountContent from '../AccountContent';
 import AccountError from '../AccountError';
-import AccountOptions from '../AccountOptions';
 import Compras from '../Compras';
 import './style.scss';
 
@@ -15,9 +14,6 @@ const AccountMain = ({ navigate, accountInfo, loading, error }: { navigate: any,
 
             {accountInfo && !loading && !error && (
                 <AccountContent navigate={navigate} account={accountInfo} />
-            )}
-            {accountInfo && !loading && !error && (
-                <AccountOptions />
             )}
             {accountInfo && !loading && !error && (
                 <Compras />

@@ -25,9 +25,13 @@ const Login = () => {
         }
     };
 
+    const handleGoBack = () => {
+        navigate(-1);
+    };
+
     return (
         <LayoutMain>
-            <BasicWrapper>
+            <BasicWrapper handleGoBack={handleGoBack}>
                 <LoginForm
                     handleSubmit={handleSubmit}
                     handleChange={handleChange}

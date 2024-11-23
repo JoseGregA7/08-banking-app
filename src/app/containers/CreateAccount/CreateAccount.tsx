@@ -5,6 +5,7 @@ import BasicWrapper from '@ui/components/BasicWrapper';
 import './style.scss';
 import useCreateAccount from '../../core/hooks/useCreateAccount'; 
 import { createAccountHelper } from '../../core/utils/createAccounHelper';
+import { useGoBack } from '../../core/hooks/useGoBack';
 
 const CreateAccount = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ const CreateAccount = () => {
   });
   const navigate = useNavigate();
   const { createAccount, loading, error } = useCreateAccount(); 
+  const { handleGoBack } = useGoBack();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -30,7 +32,7 @@ const CreateAccount = () => {
 
   return (
     <LayoutMain>
-      <BasicWrapper>
+      <BasicWrapper handleGoBack={handleGoBack}>
         <h1>Crear Cuenta</h1>
         <div className="register__container">
           <div className="register__container__title">Crear una nueva cuenta</div>

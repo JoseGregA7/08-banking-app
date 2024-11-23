@@ -5,6 +5,7 @@ import BasicWrapper from '@ui/components/BasicWrapper';
 import RegisterForm from '@ui/forms/RegisterForm';
 import { useSignUp } from '../../core/hooks/useSignUp';
 import { ISignUpData } from '../../core/interfaces/request';
+import { useGoBack } from '../../core/hooks/useGoBack';
 
 const SignUp = () => {
     const [formData, setFormData] = useState<ISignUpData>({
@@ -15,6 +16,7 @@ const SignUp = () => {
     });
 
     const navigate = useNavigate();
+const { handleGoBack } = useGoBack();
     const { signUp, loading, error } = useSignUp();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,7 +36,7 @@ const SignUp = () => {
 
     return (
         <LayoutMain>
-            <BasicWrapper>
+            <BasicWrapper handleGoBack={handleGoBack}>
                 <RegisterForm
                     handleSubmit={handleSubmit}
                     loading={loading}
