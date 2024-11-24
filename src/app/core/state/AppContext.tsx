@@ -1,4 +1,3 @@
-// AppContext.tsx
 import React, { createContext, useReducer, useContext, ReactNode } from 'react';
 import { appReducer } from './reducers';
 import { IAppContextProps, IAppState } from '../interfaces/state';
@@ -10,6 +9,12 @@ export const AppProvider: React.FC<{ children: ReactNode; value?: IAppContextPro
         accountInfo: null,
         error: null,
         loading: false,
+        withdrawalAmount: 0,
+        withdrawalType: 'ATM_WITHDRAWAL',
+        buyType: 'PHYSICAL_ESTABLISHMENT',
+        buyAmount: 0,
+        depositType: 'BRANCH',
+        depositAmount: 0,
     };
 
     const [state, dispatch] = useReducer(appReducer, initialState);

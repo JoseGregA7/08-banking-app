@@ -12,13 +12,10 @@ export const useSignUp = () => {
             setError('Todos los campos son obligatorios.');
             return;
         }
-
         setLoading(true);
         setError(null);
-
         try {
             const data: IResponseData = await registerUser(formData);
-
             if (data.dinError.code === "0") {
                 setUser({ token: data.dinBody.token, id: data.dinBody.id });
                 return data;

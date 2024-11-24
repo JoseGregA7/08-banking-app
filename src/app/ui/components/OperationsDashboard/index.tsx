@@ -1,28 +1,12 @@
-import { useState } from "react";
 import AccountOptions from "../AccountOptions";
 import AccountStatus from "../AccountStatus";
-import { IAccountInfo } from "../../../core/interfaces/state";
+import './style.scss';
 
-interface AccountInfo {
-    id: number | null;
-    number: string | null;
-    amount: number | null;
-    customerId: number | null;
-    createdAt: string | null;
-}
-
-const OperationsDashboard = ({ navigate, accountInfo, loading, error }: { navigate: any, accountInfo: IAccountInfo | null, loading: boolean, error: string | null }) => {
-    const [selectedOption, setSelectedOption] = useState<string | null>(null);
-    const handleOptionClick = (option: string) => {
-        setSelectedOption(option);
-    };
-    const handleClose = () => {
-        setSelectedOption(null);
-    }
+const OperationsDashboard = ({ accountInfo, handleWithdrawTypeChange, handleWithdrawalAmountChange, handleWithdrawalSubmit, state, selectedOption, handleOptionClick, handleClose, handleDepositTypeChange, handleDepositAmountChange, handleDepositSubmit, handleBuySubmit, handleBuyTypeChange, handleBuyAmountChange}: any) => {
     return (
-        <div>
-            <AccountStatus accountInfo={accountInfo} />           
-            <AccountOptions selectedOption={selectedOption} handleOptionClick={handleOptionClick} handleClose={handleClose} />            
+        <div className="OperationsDashboard__wrapper">
+            <AccountStatus accountInfo={accountInfo} />
+            <AccountOptions selectedOption={selectedOption} handleOptionClick={handleOptionClick} handleClose={handleClose} handleWithdrawTypeChange={handleWithdrawTypeChange} handleWithdrawalAmountChange={handleWithdrawalAmountChange} handleWithdrawalSubmit={handleWithdrawalSubmit} state={state} handleDepositTypeChange={handleDepositTypeChange} handleDepositAmountChange={handleDepositAmountChange} handleDepositSubmit={handleDepositSubmit} handleBuySubmit={handleBuySubmit} handleBuyTypeChange={handleBuyTypeChange} handleBuyAmountChange={handleBuyAmountChange} />
         </div>
     )
 }

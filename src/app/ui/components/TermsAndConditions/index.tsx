@@ -4,7 +4,7 @@ export const TermsAndConditions = () => {
     return (
         <div>
             <a href="#" className='home__terms-conditions'>
-                terminos y condiciones
+                Términos y Condiciones
             </a>
         </div>
     )

@@ -7,6 +7,7 @@ import Account from '../containers/Account/Account';
 import CreateAccount from '../containers/CreateAccount/CreateAccount';
 import FirstLogin from '../containers/FirstLogin/FirstLogin';
 import Operations from '../containers/Operations/Operations';
+import PrivateRoute from './guards/GuardSession';
 
 
 export const router = createBrowserRouter([
@@ -45,25 +46,32 @@ export const router = createBrowserRouter([
   {
     path: '/account',
     element: (
-      <AppProvider>
-        <Account />
-      </AppProvider>
+      <PrivateRoute>
+        <AppProvider>
+          <Account />
+        </AppProvider>
+      </PrivateRoute>
+
     ),
   },
   {
     path: '/create-account',
     element: (
-      <AppProvider>
-        <CreateAccount />
-      </AppProvider>
+      <PrivateRoute>
+        <AppProvider>
+          <CreateAccount />
+        </AppProvider>
+      </PrivateRoute>
     ),
   },
   {
     path: '/operations',
     element: (
-      <AppProvider>
-        <Operations />
-      </AppProvider>
+      <PrivateRoute>
+        <AppProvider>
+          <Operations />
+        </AppProvider>
+      </PrivateRoute>
     ),
   },
 ]);

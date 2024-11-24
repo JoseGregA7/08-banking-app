@@ -3,9 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { LayoutMain } from '@ui/layouts/LayoutMain';
 import BasicWrapper from '@ui/components/BasicWrapper';
 import './style.scss';
-import useCreateAccount from '../../core/hooks/useCreateAccount'; 
+import useCreateAccount from '../../core/hooks/useCreateAccount';
 import { createAccountHelper } from '../../core/utils/createAccounHelper';
 import { useGoBack } from '../../core/hooks/useGoBack';
+import { useGoHome } from '../../core/hooks/useGoHome';
 
 const CreateAccount = () => {
   const [formData, setFormData] = useState({
@@ -13,8 +14,9 @@ const CreateAccount = () => {
     amount: '',
   });
   const navigate = useNavigate();
-  const { createAccount, loading, error } = useCreateAccount(); 
+  const { createAccount, loading, error } = useCreateAccount();
   const { handleGoBack } = useGoBack();
+  const { handleEndSession } = useGoHome();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -32,7 +34,7 @@ const CreateAccount = () => {
 
   return (
     <LayoutMain>
-      <BasicWrapper handleGoBack={handleGoBack}>
+      <BasicWrapper handleGoBack={handleGoBack} handleEndSession={handleEndSession}>
         <h1>Crear Cuenta</h1>
         <div className="register__container">
           <div className="register__container__title">Crear una nueva cuenta</div>

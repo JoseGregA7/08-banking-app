@@ -5,7 +5,7 @@ export const createAccountHelper = async (
   clientId: string | null,
   token: string | null,
   navigate: NavigateFunction,
-  createAccount: (number: string, amount: string, clientId: string, token: string) => Promise<any> // Recibimos la función createAccount como argumento
+  createAccount: (number: string, amount: string, clientId: string, token: string) => Promise<any>
 ) => {
   if (!token || !clientId) {
     console.log('No se pudo obtener el token o el clientId.');

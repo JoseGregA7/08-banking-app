@@ -1,0 +1,97 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`OperationsDashboard > should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="OperationsDashboard__wrapper"
+  >
+    <div
+      class="AccountStatus__wrapper"
+    >
+      <div
+        class="AccountStatus__main"
+      >
+        <div
+          class="AccountStatus__title"
+        >
+          Estado de la Cuenta
+        </div>
+        <div
+          class="AccountStatus__content"
+        >
+          <ul
+            class="AccountStatus__list"
+          >
+            <li
+              class="AccountStatus__item"
+            >
+              <strong>
+                balance:
+              </strong>
+               1000
+            </li>
+            <li
+              class="AccountStatus__item"
+            >
+              <strong>
+                currency:
+              </strong>
+               USD
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div
+      class="Option__wrapper"
+    >
+      <div
+        class="Option__title"
+      >
+        Opciones de la Cuenta
+      </div>
+      <div
+        class="Option__container"
+      >
+        <button
+          aria-label="option_button_depósitos"
+          class="Option__button"
+          name="option_button_depósitos"
+          role="option_button_depósitos"
+        >
+          Depósitos
+        </button>
+        <button
+          aria-label="option_button_retiros"
+          class="Option__button"
+          name="option_button_retiros"
+          role="option_button_retiros"
+        >
+          Retiros
+        </button>
+        <button
+          aria-label="option_button_compras"
+          class="Option__button"
+          name="option_button_compras"
+          role="option_button_compras"
+        >
+          Compras
+        </button>
+      </div>
+      <div
+        class="Option__close"
+      >
+        <div>
+          <button
+            aria-label="Cerrar"
+            name="cerrar"
+            role="button"
+          >
+            x
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

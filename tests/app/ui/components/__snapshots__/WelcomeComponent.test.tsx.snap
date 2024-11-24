@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`WelcomeComponent > should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="buttons-container"
+  >
+    <div>
+      Ya tienes cuenta?
+    </div>
+    <button
+      class="button"
+    >
+      Ingresar
+    </button>
+    <div>
+      Unete ahora
+    </div>
+    <button
+      class="button"
+    >
+      Regístrate
+    </button>
+    <div>
+      <a
+        class="home__forgot-password"
+        href="#"
+      >
+        Olvide mi contraseña
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

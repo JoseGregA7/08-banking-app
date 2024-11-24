@@ -1,15 +1,14 @@
-import { ReactNode } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
+import { isTokenExpired } from '../../core/utils/authUtils';
 
-interface IGuardProps {
-  children: ReactNode;
-}
-export const Guard = ({ children }: IGuardProps) => {
-  const { currentUser } = { currentUser: true };
-
-  if (!currentUser) {
-    return <Navigate to='/auth' replace />;
+const PrivateRoute = ({ children }: { children: JSX.Element }) => {
+  const token = localStorage.getItem('token');
+  const isAuthenticated = token && !isTokenExpired(token);  
+  if (!isAuthenticated) {
+    alert('Debes iniciar sesión para acceder a esta página');
+    return <Navigate to="/" replace />;
   }
-
-  return children;
+  return children || <Outlet />;
 };
+
+export default PrivateRoute;

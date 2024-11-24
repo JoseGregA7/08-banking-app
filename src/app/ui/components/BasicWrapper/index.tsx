@@ -1,13 +1,15 @@
 import { ReactNode } from 'react';
 import './style.scss';
 import { TermsAndConditions } from '../TermsAndConditions';
+import AvatarLogout from '../AvatarComponent';
 
 interface Props {
   children: ReactNode | ReactNode[];
   handleGoBack: () => void;
+  handleEndSession: () => void;
 }
 
-const BasicWrapper = ({ children, handleGoBack }: Props) => {
+const BasicWrapper = ({ children, handleGoBack, handleEndSession }: Props) => {
 
   return (
     <div className='layout_main_wrapper'>
@@ -20,6 +22,7 @@ const BasicWrapper = ({ children, handleGoBack }: Props) => {
                    ↩
                 </button>
               </div>
+              <AvatarLogout handleEndSession={handleEndSession} />
             </div>
             <div className='layout_main__logo'>
               <img src="bank.webp" alt="Logo del Banco" />

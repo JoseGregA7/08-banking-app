@@ -1,43 +1,31 @@
 import { useEffect } from 'react';
 import axios from 'axios';
-import { SET_ACCOUNT_INFO, SET_ERROR, SET_LOADING } from '../state/status/actions';  // Asegúrate de que la ruta sea correcta
+import { SET_ACCOUNT_INFO, SET_ERROR, SET_LOADING } from '../state/status/actions';
 import { useAppContext } from '../state/AppContext';
+import { generateDinHeader } from '../utils/loginUtils';
+
 
 const useAccount = () => {
     const { state, dispatch } = useAppContext();
     const { accountInfo, loading, error } = state;
-    console.log('test info on hook',accountInfo);
-
+    const token = localStorage.getItem('token');
+    const clientId = localStorage.getItem('clientId');
+    const requestData = {
+        dinHeader: generateDinHeader(),
+        dinBody: {
+            id: clientId,
+            number: null,
+            amount: null,
+            customerId: null,
+            createdAt: null
+        }
+    }
     useEffect(() => {
-        console.log('test info on useeffect',accountInfo);
-        const fetchAccount = async () => {
-            const token = localStorage.getItem('token');
-            const clientId = localStorage.getItem('clientId');
-
+        const getAccount = async () => {
             if (!token || !clientId) {
                 dispatch({ type: SET_ERROR, payload: 'No estás autenticado o no se encontró el ID del cliente.' });
                 return;
             }
-
-            const requestData = {
-                dinHeader: {
-                    device: 'device_value',
-                    language: 'en',
-                    uuid: 'random_uuid_value',
-                    ip: '192.168.1.1',
-                    transactionTime: new Date().toISOString(),
-                    symmetricalKey: 'key_value',
-                    initializationVector: 'vector_value',
-                },
-                dinBody: {
-                    id: clientId,
-                    number: null,
-                    amount: null,
-                    customerId: null,
-                    createdAt: null
-                }
-            };
-
             try {
                 dispatch({ type: SET_LOADING, payload: true });
 
@@ -56,12 +44,8 @@ const useAccount = () => {
                 dispatch({ type: SET_LOADING, payload: false });
             }
         };
-
-        fetchAccount();
+        getAccount();
     }, [dispatch]);
-
-    console.log('test info on hook',accountInfo);
-
     return { accountInfo, loading, error };
 };
 

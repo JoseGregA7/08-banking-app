@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TermAndConditions > match snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <a
+      class="home__terms-conditions"
+      href="#"
+    >
+      Términos y Condiciones
+    </a>
+  </div>
+</DocumentFragment>
+`;

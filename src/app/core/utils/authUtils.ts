@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { generateDinHeader } from './generateDinHeaders';
 import { IFirstLoginData, FirstLoginResponseData } from '../interfaces/request';
+import { useNavigate } from 'react-router-dom';
+import { useGoHome } from '../hooks/useGoHome';
 
 export const authenticateUser = async (formData: IFirstLoginData): Promise<FirstLoginResponseData | null> => {
     const requestDataLogin = {
@@ -36,3 +38,15 @@ export const createCustomer = async (email: string, token: string) => {
         throw new Error('Error al crear el cliente.');
     }
 };
+
+export const isTokenExpired = (token: string) => {
+    const tokenParts = token.split('.');
+    if (tokenParts.length === 3) {
+        const payload = JSON.parse(atob(tokenParts[1]));  // Decodificamos el payload del JWT
+        const expirationDate = payload.exp * 1000;
+        return expirationDate < Date.now();  // Compara la fecha de expiración con la fecha actual
+    }
+
+    return true;  // Si el token no es válido, lo tratamos como expirado
+};
+

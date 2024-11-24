@@ -5,17 +5,18 @@ import BasicWrapper from '@ui/components/BasicWrapper';
 import LoginForm from '@ui/forms/LoginForm';
 import { useLogin } from '../../core/hooks/useLogin';
 import { ILoginData } from '../../core/interfaces/request';
+import { isTokenExpired } from '../../core/utils/authUtils';
+import { useGoHome } from '../../core/hooks/useGoHome';
 
 const Login = () => {
     const [formData, setFormData] = useState<ILoginData>({ email: '', password: '' });
     const navigate = useNavigate();
     const { loginUser, loading, error } = useLogin();
-
+    const { handleEndSession } = useGoHome();
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData(prevData => ({ ...prevData, [name]: value }));
     };
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         await loginUser(formData);
@@ -24,14 +25,13 @@ const Login = () => {
             navigate('/account');
         }
     };
-
     const handleGoBack = () => {
         navigate(-1);
     };
-
+    localStorage.getItem('token') !== null && isTokenExpired(localStorage.getItem('token') as string) && localStorage.removeItem('token');
     return (
         <LayoutMain>
-            <BasicWrapper handleGoBack={handleGoBack}>
+            <BasicWrapper handleGoBack={handleGoBack} handleEndSession={handleEndSession}>
                 <LoginForm
                     handleSubmit={handleSubmit}
                     handleChange={handleChange}

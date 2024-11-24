@@ -5,6 +5,7 @@ import BasicWrapper from '@ui/components/BasicWrapper';
 import LoginForm from '@ui/forms/LoginForm';
 import { useFirstLogin } from '../../core/hooks/useFirstLogin';
 import { useGoBack } from '../../core/hooks/useGoBack';
+import { useGoHome } from '../../core/hooks/useGoHome';
 
 interface IFirstLoginData {
     email: string;
@@ -19,6 +20,7 @@ const FirstLogin = () => {
     const navigate = useNavigate();
     const { loginAndCreateClient, loading, error } = useFirstLogin(); // Usamos el hook
     const { handleGoBack } = useGoBack();
+    const { handleEndSession } = useGoHome();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -35,7 +37,7 @@ const FirstLogin = () => {
 
     return (
         <LayoutMain>
-            <BasicWrapper handleGoBack={handleGoBack}>
+            <BasicWrapper handleGoBack={handleGoBack} handleEndSession={handleEndSession}>
                 <LoginForm
                     handleSubmit={handleSubmit}
                     handleChange={handleChange}

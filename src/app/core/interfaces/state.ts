@@ -1,15 +1,19 @@
-// interfaces/state.ts
 export interface IAccountInfo {
   id: number;
   name: string;
   amount: number;  
 }
 
-
 export interface IAppState {
   accountInfo: IAccountInfo | null;
   error: string | null;
   loading: boolean;
+  withdrawalAmount: number;
+  withdrawalType: string;
+  buyType: string;
+  buyAmount: number;
+  depositType: string;
+  depositAmount: number;
 }
 
 export interface AppAction {
@@ -19,14 +23,12 @@ export interface AppAction {
 
 export interface IAppContextProps {
   state: IAppState;
-  dispatch: React.Dispatch<any>; // El dispatch es la función que dispara las acciones
+  dispatch: React.Dispatch<any>;
 }
 
-// types.ts
-export type AccountActionTypes = 'SET_ACCOUNT_INFO' | 'SET_ERROR' | 'SET_LOADING';
+export type AccountActionTypes = 'SET_ACCOUNT_INFO' | 'SET_ERROR' | 'SET_LOADING' | 'SET_WITHDRAWAL_AMOUNT' | 'SET_WITHDRAWAL_TYPE';
 
-// Define las acciones
 export interface AccountAction {
     type: AccountActionTypes;
-    payload?: any; // Puedes ser más específico dependiendo de la acción
+    payload?: any;
 }
