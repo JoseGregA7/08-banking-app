@@ -1,0 +1,88 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BasicWrapper > should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="layout_main_wrapper"
+    data-testid="basic-wrapper"
+  >
+    <div
+      class="layout_main"
+    >
+      <div
+        class="layout_main__content"
+      >
+        <header
+          class="layout_main__header"
+          role="banner"
+        >
+          <div
+            class="back-button-wrapper"
+          >
+            <div
+              class="back-button-container"
+            >
+              <button
+                aria-label="Volver a la página anterior"
+                class="back-button"
+                data-testid="back-button"
+              >
+                ↩
+              </button>
+            </div>
+            <div
+              aria-label="Cerrar sesión"
+              class="avatar-logout"
+              data-testid="avatar-logout-wrapper"
+              role="button"
+            >
+              <img
+                alt="Avatar de usuario - Cerrar sesión"
+                class="avatar"
+                data-testid="avatar-logout-button"
+                role="presentation"
+                src="avatar.webp"
+              />
+            </div>
+          </div>
+          <div
+            class="layout_main__logo"
+          >
+            <img
+              alt="Logo de GregBank, banco en línea"
+              data-testid="bank-logo"
+              src="bank.webp"
+            />
+          </div>
+          <h1
+            class="welcomeText"
+          >
+            Bienvenido a GregBank
+          </h1>
+          <p
+            class="sub-text"
+          >
+            ¡Tu banco en línea, fácil y seguro!
+          </p>
+        </header>
+        <main>
+          <div>
+            Test Content
+          </div>
+        </main>
+        <footer>
+          <div>
+            <a
+              class="home__terms-conditions"
+              data-testid="terms-conditions"
+              href="#"
+            >
+              Términos y Condiciones
+            </a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

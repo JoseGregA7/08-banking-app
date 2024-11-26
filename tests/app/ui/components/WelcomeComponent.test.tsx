@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import WelcomeComponent from '../../../../src/app/ui/components/WelcomeComponent';  // Ajusta la ruta según corresponda
+import WelcomeComponent from '../../../../src/app/ui/components/WelcomeComponent'; 
 import { describe, expect, test, vitest } from 'vitest';
 
 describe('WelcomeComponent', () => {

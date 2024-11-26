@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AvatarLogout > should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="Cerrar sesión"
+    class="avatar-logout"
+    data-testid="avatar-logout-wrapper"
+    role="button"
+  >
+    <img
+      alt="Avatar de usuario - Cerrar sesión"
+      class="avatar"
+      data-testid="avatar-logout-button"
+      role="presentation"
+      src="avatar.webp"
+    />
+  </div>
+</DocumentFragment>
+`;

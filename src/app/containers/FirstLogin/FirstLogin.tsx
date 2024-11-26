@@ -6,11 +6,7 @@ import LoginForm from '@ui/forms/LoginForm';
 import { useFirstLogin } from '../../core/hooks/useFirstLogin';
 import { useGoBack } from '../../core/hooks/useGoBack';
 import { useGoHome } from '../../core/hooks/useGoHome';
-
-interface IFirstLoginData {
-    email: string;
-    password: string;
-}
+import { IFirstLoginData } from '../../core/interfaces/request';
 
 const FirstLogin = () => {
     const [formData, setFormData] = useState<IFirstLoginData>({

@@ -6,24 +6,34 @@ exports[`OperationsDashboard > should match snapshot 1`] = `
     class="OperationsDashboard__wrapper"
   >
     <div
+      aria-labelledby="account-status-title"
       class="AccountStatus__wrapper"
+      data-testid="account-status-wrapper"
+      role="region"
     >
       <div
         class="AccountStatus__main"
       >
-        <div
+        <h2
+          aria-label="Estado de la Cuenta"
           class="AccountStatus__title"
+          data-testid="account-status-title"
+          id="account-status-title"
+          title="Estado de la Cuenta"
         >
           Estado de la Cuenta
-        </div>
+        </h2>
         <div
           class="AccountStatus__content"
         >
           <ul
+            aria-labelledby="account-status-list"
             class="AccountStatus__list"
+            role="list"
           >
             <li
               class="AccountStatus__item"
+              role="listitem"
             >
               <strong>
                 balance:
@@ -32,6 +42,7 @@ exports[`OperationsDashboard > should match snapshot 1`] = `
             </li>
             <li
               class="AccountStatus__item"
+              role="listitem"
             >
               <strong>
                 currency:
@@ -43,43 +54,55 @@ exports[`OperationsDashboard > should match snapshot 1`] = `
       </div>
     </div>
     <div
+      aria-labelledby="account-options-title"
       class="Option__wrapper"
+      data-testid="account-options-wrapper"
+      role="region"
     >
-      <div
+      <h2
+        aria-label="Opciones de la Cuenta"
         class="Option__title"
+        data-testid="account-options-title"
+        id="account-options-title"
+        title="Opciones de la Cuenta"
       >
         Opciones de la Cuenta
-      </div>
+      </h2>
       <div
         class="Option__container"
       >
         <button
-          aria-label="option_button_depósitos"
+          aria-label="Depósitos"
           class="Option__button"
+          data-testid="account-option-deposit"
           name="option_button_depósitos"
-          role="option_button_depósitos"
+          role="button"
         >
           Depósitos
         </button>
         <button
-          aria-label="option_button_retiros"
+          aria-label="Retiros"
           class="Option__button"
+          data-testid="account-option-withdraw"
           name="option_button_retiros"
-          role="option_button_retiros"
+          role="button"
         >
           Retiros
         </button>
         <button
-          aria-label="option_button_compras"
+          aria-label="Compras"
           class="Option__button"
+          data-testid="account-option-purchases"
           name="option_button_compras"
-          role="option_button_compras"
+          role="button"
         >
           Compras
         </button>
       </div>
       <div
+        aria-live="polite"
         class="Option__close"
+        data-testid="account-close-button"
       >
         <div>
           <button

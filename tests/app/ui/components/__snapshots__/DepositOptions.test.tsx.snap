@@ -1,0 +1,82 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DepositOptions > should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="DepositOptions__wrapper"
+    data-testid="deposit-options-wrapper"
+  >
+    <h3
+      class="DepositOptions__title"
+      id="deposit-form-title"
+    >
+      Formulario de Depósito
+    </h3>
+    <form
+      aria-labelledby="deposit-form-title"
+      class="DepositOptions__form"
+      data-testid="deposit-form"
+    >
+      <div
+        class="DepositOptions__field"
+      >
+        <label
+          class="DepositOptions__label"
+          for="depositType"
+        >
+          Tipo de Depósito:
+        </label>
+        <select
+          aria-label="Seleccionar el tipo de depósito"
+          class="DepositOptions__select"
+          data-testid="deposit-type-select"
+          id="depositType"
+        >
+          <option
+            value="BRANCH"
+          >
+            Depósito desde Sucursal
+          </option>
+          <option
+            value="ATM"
+          >
+            Depósito desde Cajero
+          </option>
+          <option
+            value="ANOTHER_ACCOUNT"
+          >
+            Depósito desde Otra Cuenta
+          </option>
+        </select>
+      </div>
+      <div
+        class="DepositOptions__field"
+      >
+        <label
+          class="DepositOptions__label"
+          for="amount"
+        >
+          Cantidad a depositar:
+        </label>
+        <input
+          aria-label="Cantidad a depositar"
+          class="DepositOptions__input"
+          data-testid="deposit-amount-input"
+          id="amount"
+          min="0"
+          type="number"
+          value="100"
+        />
+      </div>
+      <button
+        aria-label="Realizar depósito"
+        class="DepositOptions__submitButton"
+        data-testid="deposit-submit-button"
+        type="submit"
+      >
+        Realizar Depósito
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;

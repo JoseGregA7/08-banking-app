@@ -1,0 +1,63 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AccountStatus > should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    aria-labelledby="account-status-title"
+    class="AccountStatus__wrapper"
+    data-testid="account-status-wrapper"
+    role="region"
+  >
+    <div
+      class="AccountStatus__main"
+    >
+      <h2
+        aria-label="Estado de la Cuenta"
+        class="AccountStatus__title"
+        data-testid="account-status-title"
+        id="account-status-title"
+        title="Estado de la Cuenta"
+      >
+        Estado de la Cuenta
+      </h2>
+      <div
+        class="AccountStatus__content"
+      >
+        <ul
+          aria-labelledby="account-status-list"
+          class="AccountStatus__list"
+          role="list"
+        >
+          <li
+            class="AccountStatus__item"
+            role="listitem"
+          >
+            <strong>
+              id:
+            </strong>
+             12
+          </li>
+          <li
+            class="AccountStatus__item"
+            role="listitem"
+          >
+            <strong>
+              name:
+            </strong>
+             John Doe
+          </li>
+          <li
+            class="AccountStatus__item"
+            role="listitem"
+          >
+            <strong>
+              Saldo Actual:
+            </strong>
+             4000
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

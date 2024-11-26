@@ -5,6 +5,7 @@ exports[`TermAndConditions > match snapshot 1`] = `
   <div>
     <a
       class="home__terms-conditions"
+      data-testid="terms-conditions"
       href="#"
     >
       Términos y Condiciones

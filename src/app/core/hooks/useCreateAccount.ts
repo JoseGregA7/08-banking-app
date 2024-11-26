@@ -39,13 +39,10 @@ const useCreateAccount = () => {
 
             const { dinBody, dinError } = response.data;
 
-            // Verificamos si la cuenta se creó correctamente
             if (dinError && dinError.code === '0') {
-                // Si la respuesta contiene los valores necesarios, actualizamos el estado
                 dispatch({ type: SET_ACCOUNT_INFO, payload: dinBody });
                 return { success: true, data: dinBody };
             } else {
-                // Si los campos necesarios son nulos, consideramos que la operación falló
                 setError('No se pudo crear la cuenta. Intenta nuevamente.');
                 dispatch({ type: SET_ERROR, payload: 'Error en la creación de la cuenta' });
                 return { success: false };

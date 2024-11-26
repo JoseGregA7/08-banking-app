@@ -7,12 +7,14 @@ import { useLogin } from '../../core/hooks/useLogin';
 import { ILoginData } from '../../core/interfaces/request';
 import { isTokenExpired } from '../../core/utils/authUtils';
 import { useGoHome } from '../../core/hooks/useGoHome';
+import { useGoBack } from '../../core/hooks/useGoBack';
 
 const Login = () => {
     const [formData, setFormData] = useState<ILoginData>({ email: '', password: '' });
     const navigate = useNavigate();
     const { loginUser, loading, error } = useLogin();
     const { handleEndSession } = useGoHome();
+    const { handleGoBack } = useGoBack();
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData(prevData => ({ ...prevData, [name]: value }));
@@ -24,9 +26,6 @@ const Login = () => {
         if (!error) {
             navigate('/account');
         }
-    };
-    const handleGoBack = () => {
-        navigate(-1);
     };
     localStorage.getItem('token') !== null && isTokenExpired(localStorage.getItem('token') as string) && localStorage.removeItem('token');
     return (

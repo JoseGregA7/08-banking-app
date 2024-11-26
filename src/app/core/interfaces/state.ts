@@ -1,7 +1,7 @@
 export interface IAccountInfo {
   id: number;
   name: string;
-  amount: number;  
+  amount: number;
 }
 
 export interface IAppState {
@@ -29,6 +29,10 @@ export interface IAppContextProps {
 export type AccountActionTypes = 'SET_ACCOUNT_INFO' | 'SET_ERROR' | 'SET_LOADING' | 'SET_WITHDRAWAL_AMOUNT' | 'SET_WITHDRAWAL_TYPE';
 
 export interface AccountAction {
-    type: AccountActionTypes;
-    payload?: any;
+  type: AccountActionTypes;
+  payload?: any;
+}
+
+export interface AccountStatusProps {
+  accountInfo: IAccountInfo | null;
 }

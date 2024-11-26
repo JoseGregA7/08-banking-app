@@ -1,0 +1,78 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BuyOptions > should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="BuyOptions__wrapper"
+    data-testid="buy-options-wrapper"
+  >
+    <h3
+      class="BuyOptions__title"
+    >
+      Formulario de Compras
+    </h3>
+    <form
+      aria-labelledby="buy-form-title"
+      class="BuyOptions__form"
+    >
+      <div
+        class="BuyOptions__field"
+      >
+        <label
+          class="BuyOptions__label"
+          for="purchaseType"
+          id="buy-form-title"
+        >
+          Tipo de Compra:
+        </label>
+        <select
+          aria-label="Seleccionar el tipo de compra"
+          class="BuyOptions__select"
+          data-testid="buy-type-select"
+          id="purchaseType"
+        >
+          <option
+            value="PHYSICAL_ESTABLISHMENT"
+          >
+            En Establecimiento Físico
+          </option>
+          <option
+            value="WEB_PAGE"
+          >
+            En la Página Web
+          </option>
+        </select>
+      </div>
+      <div
+        class="BuyOptions__field"
+      >
+        <label
+          aria-label="Cantidad a comprar"
+          class="BuyOptions__label"
+          for="amount"
+        >
+          Cantidad a comprar:
+        </label>
+        <input
+          aria-labelledby="amount-label"
+          aria-placeholder="Ingrese la cantidad de productos"
+          class="BuyOptions__input"
+          data-testid="buy-amount-input"
+          id="amount"
+          min="0"
+          type="number"
+          value="100"
+        />
+      </div>
+      <button
+        aria-label="Realizar compra"
+        class="BuyOptions__submitButton"
+        data-testid="buy-submit-button"
+        type="submit"
+      >
+        Realizar Compra
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;

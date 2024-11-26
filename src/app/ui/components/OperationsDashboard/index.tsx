@@ -2,7 +2,7 @@ import AccountOptions from "../AccountOptions";
 import AccountStatus from "../AccountStatus";
 import './style.scss';
 
-const OperationsDashboard = ({ accountInfo, handleWithdrawTypeChange, handleWithdrawalAmountChange, handleWithdrawalSubmit, state, selectedOption, handleOptionClick, handleClose, handleDepositTypeChange, handleDepositAmountChange, handleDepositSubmit, handleBuySubmit, handleBuyTypeChange, handleBuyAmountChange}: any) => {
+const OperationsDashboard = ({ accountInfo, handleWithdrawTypeChange, handleWithdrawalAmountChange, handleWithdrawalSubmit, state, selectedOption, handleOptionClick, handleClose, handleDepositTypeChange, handleDepositAmountChange, handleDepositSubmit, handleBuySubmit, handleBuyTypeChange, handleBuyAmountChange }: any) => {
     return (
         <div className="OperationsDashboard__wrapper">
             <AccountStatus accountInfo={accountInfo} />

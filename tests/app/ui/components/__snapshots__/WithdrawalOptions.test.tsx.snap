@@ -1,0 +1,76 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`WithdrawOptions > should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="WithdrawOptions__wrapper"
+    data-testid="withdraw-options-wrapper"
+  >
+    <h3
+      class="WithdrawOptions__title"
+      id="withdraw-form-title"
+    >
+      Formulario de Retiro
+    </h3>
+    <form
+      aria-labelledby="withdraw-form-title"
+      class="WithdrawOptions__form"
+    >
+      <div
+        class="WithdrawOptions__field"
+      >
+        <label
+          class="WithdrawOptions__label"
+          for="withdrawType"
+        >
+          Tipo de Retiro:
+        </label>
+        <select
+          aria-label="Seleccionar el tipo de retiro"
+          class="WithdrawOptions__select"
+          data-testid="withdraw-type-select"
+          id="withdrawType"
+        >
+          <option
+            value="ATM_WITHDRAWAL"
+          >
+            Retiro desde Cajero
+          </option>
+          <option
+            value="OTHER_WITHDRAWAL"
+          >
+            Otro tipo de retiro
+          </option>
+        </select>
+      </div>
+      <div
+        class="WithdrawOptions__field"
+      >
+        <label
+          class="WithdrawOptions__label"
+          for="withdrawalAmount"
+        >
+          Cantidad a retirar:
+        </label>
+        <input
+          aria-label="Cantidad a retirar"
+          class="WithdrawOptions__input"
+          data-testid="withdraw-amount-input"
+          id="withdrawalAmount"
+          min="0"
+          type="number"
+          value="100"
+        />
+      </div>
+      <button
+        aria-label="Realizar retiro"
+        class="WithdrawOptions__submitButton"
+        data-testid="withdraw-submit-button"
+        type="submit"
+      >
+        Realizar Retiro
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;

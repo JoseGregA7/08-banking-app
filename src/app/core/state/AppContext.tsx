@@ -2,7 +2,7 @@ import React, { createContext, useReducer, useContext, ReactNode } from 'react';
 import { appReducer } from './reducers';
 import { IAppContextProps, IAppState } from '../interfaces/state';
 
-export const AppContext = createContext< IAppContextProps | undefined>(undefined);
+export const AppContext = createContext<IAppContextProps | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: ReactNode; value?: IAppContextProps }> = ({ children }) => {
     const initialState: IAppState = {

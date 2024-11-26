@@ -9,7 +9,7 @@ const SubOptions = ({ option, handleWithdrawTypeChange, handleWithdrawalAmountCh
     case 'retiros':
       return <WithdrawalOptions handleWithdrawTypeChange={handleWithdrawTypeChange} handleWithdrawalAmountChange={handleWithdrawalAmountChange} handleWithdrawalSubmit={handleWithdrawalSubmit} state={state} />;
     case 'compras':
-      return <BuyOptions  handleBuyTypeChange={handleBuyTypeChange} handleBuyAmountChange={handleBuyAmountChange} handleBuySubmit={handleBuySubmit} state={state} />;
+      return <BuyOptions handleBuyTypeChange={handleBuyTypeChange} handleBuyAmountChange={handleBuyAmountChange} handleBuySubmit={handleBuySubmit} state={state} />;
     default:
       return null;
   }

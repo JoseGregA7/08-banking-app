@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import OperationsDashboard from '../../../../src/app/ui/components/OperationsDashboard';  // Ajusta la ruta según corresponda
+import OperationsDashboard from '../../../../src/app/ui/components/OperationsDashboard';
 import { describe, expect, test, vitest } from 'vitest';
 
 describe('OperationsDashboard', () => {
