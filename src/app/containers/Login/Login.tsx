@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LayoutMain } from '@ui/layouts/LayoutMain';
 import BasicWrapper from '@ui/components/BasicWrapper';
@@ -27,7 +27,9 @@ const Login = () => {
             navigate('/account');
         }
     };
-    localStorage.getItem('token') !== null && isTokenExpired(localStorage.getItem('token') as string) && localStorage.removeItem('token');
+    useEffect(() => {
+        localStorage.getItem('token') !== null && isTokenExpired(localStorage.getItem('token') as string) && localStorage.removeItem('token');
+    }, []);
     return (
         <LayoutMain>
             <BasicWrapper handleGoBack={handleGoBack} handleEndSession={handleEndSession}>

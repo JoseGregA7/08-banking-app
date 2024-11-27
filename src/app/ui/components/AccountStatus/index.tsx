@@ -1,8 +1,10 @@
+import React from 'react';
 import { LABEL_MAPPING } from '../../../core/constants/account';
 import { AccountStatusProps } from '../../../core/interfaces/state';
 import './style.scss';
 
-const AccountStatus = ({ accountInfo }: AccountStatusProps) => {
+const AccountStatus = React.memo(({ accountInfo }: AccountStatusProps) => {
+    console.log('fui creado')
     const filteredData = accountInfo
         ? Object.entries(accountInfo)
             .filter(([key, value]) => value !== null)
@@ -51,6 +53,6 @@ const AccountStatus = ({ accountInfo }: AccountStatusProps) => {
             </div>
         </div>
     );
-};
+});
 
 export default AccountStatus;

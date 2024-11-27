@@ -1,0 +1,19 @@
+.back-button-container {
+    display: flex;
+    align-items: end;
+    margin-left: 4px;
+}
+
+.back-button {
+    font-size: 0.8rem;
+    background: linear-gradient(135deg, rgba(16, 65, 226, 0.589), rgb(14, 179, 201));
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}

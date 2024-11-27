@@ -1,10 +1,12 @@
+import React from 'react';
 import './style.scss';
 
 interface AvatarLogoutProps {
   handleEndSession: () => void;
 }
 
-const AvatarLogout = ({ handleEndSession }: AvatarLogoutProps) => {
+const AvatarLogout = React.memo(({ handleEndSession }: AvatarLogoutProps) => {
+  console.log('fui creado avatar')
   return (
     <div className="avatar-logout" role="button" aria-label="Cerrar sesión" onClick={handleEndSession} data-testid="avatar-logout-wrapper">
       <img
@@ -17,6 +19,6 @@ const AvatarLogout = ({ handleEndSession }: AvatarLogoutProps) => {
       />
     </div>
   );
-};
+});
 
 export default AvatarLogout;
